@@ -44,6 +44,12 @@ pip install keepasshttp
 
 * Importante seguir el manual de instalación explicado por Perry Nguyen.
 
+Ee las opciones de SecureCRT en propiedad de la sesión dentro de "connection" -> "Logon Actions" la opción:
+- Display logo prompts in terminal windows
+
+Tiene que estar activado.
+
+
 Versiones
 ---------
 
@@ -65,4 +71,4 @@ Fecha: 14/4/2019
 
 Versión del desarollo
 ---------------------
-Versión: 1.0
+Versión: 1.1

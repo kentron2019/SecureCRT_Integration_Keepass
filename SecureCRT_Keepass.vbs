@@ -1,5 +1,5 @@
 #$language = "VBScript"
-#$interface = "1.0"
+#$interface = "1.1"
 
 ' Script para usar con SecureCRT.
 ' GITHUB: https://github.com/kentron2019/SecureCRT_Integration_Keepass.git
