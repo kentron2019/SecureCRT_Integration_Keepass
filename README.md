@@ -73,6 +73,6 @@ Karim Zin El Abidine El Alaoui
 Versión del desarollo
 ---------------------
 - Versión: 1.1 - Desarollo código para realizar consultas utilizando el plugin KeepassHttp.
-- Versión: 1.2 - Se realizar una única consulta a SecureCRT en lugar de dos para obtener login y password.
-- Versión: 1.3 - Se ha mejorado la rutina conexion_session para detectar el promt en SecureCRT.
+- Versión: 1.2 - Se realizar una única consulta a SecureCRT en lugar de dos para obtener el login y password.
+- Versión: 1.3 - Se ha mejorado la rutina conexion_session (Fichero vbs) para detectar el prompt en SecureCRT.
 
