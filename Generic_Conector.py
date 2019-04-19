@@ -22,7 +22,6 @@ def get_pass(recibir_todo):
             storage="./keepasshttp_key", 
             url="http://localhost:19455")
 
-
     try:
         kph._authenticate()
 
@@ -38,7 +37,7 @@ def get_pass(recibir_todo):
                 #Genera la llave en la primera conexión hay que validar desde KeePass Password Safe
                 storage="./keepasshttp_key", 
                 url="http://localhost:19455")
-            hey = kph.get( "192.168.1.1" )
+            hey = kph.get( str(recibir_todo[0]) )
             sys.exit(1)
     finally: # Optional
         #print("finally:")
@@ -48,7 +47,11 @@ def get_pass(recibir_todo):
             url="http://localhost:19455")
         hey = kph.get( str(recibir_todo[0]) )
         #print("Resultado de hey.login", hey.login)
-        if str(recibir_todo[1]) =='login':
+        
+        if str(recibir_todo[1]) =='LoginyPassword':
+            resultado = str(hey.login)+str("-")+str(hey.password)
+            print(resultado)
+        elif str(recibir_todo[1]) =='login':
             print(hey.login)
         elif str(recibir_todo[1]) =='password':
             print(hey.password)

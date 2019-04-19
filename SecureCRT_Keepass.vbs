@@ -1,5 +1,5 @@
 #$language = "VBScript"
-#$interface = "1.1"
+#$interface = "1.0"
 
 ' Script para usar con SecureCRT.
 ' GITHUB: https://github.com/kentron2019/SecureCRT_Integration_Keepass.git
@@ -35,22 +35,29 @@ End Sub
 
 Sub Consulta_keepass()
 
-	dim wshShell, objShell, login, password, args, strcommand_log, strcommand_pass
+	dim wshShell, objShell, login, password, args, strcommand_log, strcommand_pass, strcommand, list, strText, n, strPreLogin, dashCount, thisURL, strPrePassword
   	
 	'Recuperamos del campo argumento la IP.
 	args = crt.Arguments.GetArg(0)
 
-	'Preparamos el comando con el scrypt python a lanzar y añadimos a la consulta la IP y tipo de consulta: login/password.
-	strcommand_log = "cmd /c python C:\Users\karim.zin\AppData\Roaming\VanDyke\k-script\SecureCRT_Integration_Keepass\Generic_Conector.py" & Chr(32) & Trim(args) &  " login"
-	strcommand_pass = "cmd /c python C:\Users\karim.zin\AppData\Roaming\VanDyke\k-script\SecureCRT_Integration_Keepass\Generic_Conector.py" & Chr(32) & Trim(args) &  " password"
+	'Preparamos el comando con el scrypt python a lanzar y añadimos a la consulta la IP y tipo de consulta: login/password o amboos.
+	' Path que hay que cambiar para localizar la ubicación del fichero: Generic_Conector.py
+	strcommand = "cmd /c python C:\Users\karim.zin\AppData\Roaming\VanDyke\k-script\SecureCRT_Integration_Keepass\Generic_Conector.py" & Chr(32) & Trim(args) &  " LoginyPassword"
 
 	Set objshell = createobject("wscript.shell")
-	Set login = objshell.exec(strcommand_log)
-	Set password = objshell.exec(strcommand_pass)
+	Set login = objshell.exec(strcommand)
+	strText = Trim(login.stdout.readall)
 
-	strLogin = Trim(login.stdout.readall)
-	'strPassword = "nada"
-	strPassword = Trim(password.stdout.readall)
+	dashCount = len(strText)-len(replace(strText,"-","")) 
+	n=dashCount
+	thisURL=split(strText,"-")
+	strPreLogin=replace(thisURL(0),".","")
+	strPrePassword=replace(thisURL(1),".","")
+	
+
+	strLogin = Trim(strPreLogin)
+	strPassword = Trim(strPrePassword)
+	'MsgBox strLogin
 
 End Sub
 

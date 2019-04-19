@@ -72,3 +72,5 @@ Fecha: 14/4/2019
 Versión del desarollo
 ---------------------
 Versión: 1.1
+
+Versión: 1.2 - Se realizar una única consulta a SecureCRT en lugar de dos para login y password.
