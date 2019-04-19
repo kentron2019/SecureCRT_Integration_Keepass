@@ -66,7 +66,8 @@ Este desarollo ha sido probado en el entorno:
 Autor:
 ------
 Karim Zin El Abidine El Alaoui
-Fecha: 14/4/2019
+Fecha Creación: 14/4/2019
+Fecha modificación: 19/4/2019
 
 
 Versión del desarollo
