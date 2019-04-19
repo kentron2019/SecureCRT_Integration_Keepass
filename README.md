@@ -74,3 +74,5 @@ Versión del desarollo
 Versión: 1.1
 
 Versión: 1.2 - Se realizar una única consulta a SecureCRT en lugar de dos para login y password.
+Versión: 1.3 - Se ha mejorado la rutina conexion_session para detectar el promt en SecureCRT.
+

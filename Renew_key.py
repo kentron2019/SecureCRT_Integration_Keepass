@@ -3,7 +3,7 @@
 
 # Script para usar con SecureCRT.
 # GITHUB: https://github.com/kentron2019/SecureCRT_Integration_Keepass.git
-# Version = 1.0
+# Version = 1.3
 # Author = Karim Zin El Abidine El Alaoui.
 # correo: kentron.dna@gmail.com
 

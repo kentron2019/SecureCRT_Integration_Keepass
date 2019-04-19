@@ -20,6 +20,7 @@ Const CiscoIosPrompt = "Username: "
 Const CiscoIosPrompt2 = "username: "
 Const DellChassisPrompt = "User Name:"
 
+
 Sub Main 'Funcción Principal.
 	
 	call Consulta_keepass()
@@ -69,25 +70,48 @@ Sub conexion_session(strLogin, strPassword)
   ' WaitForStrings returns index of string as result, 
   ' used to check prompt response selections or 0 = timeout
   ' 
-  intLoginInicial = crt.Screen.WaitForStrings(CiscoIosPrompt, DellChassisPrompt, CiscoIosPrompt2, 3)
-  If intLoginInicial > 3 Then
+  intLoginInicial = crt.Screen.WaitForStrings(CiscoIosPrompt, CiscoIosPrompt2, DellChassisPrompt, 3)
+  ' "Username: " "username: " "User Name:" Username:
+
+If intLoginInicial > 3 Then
 			MsgBox "No se puede detectar el tipo de prompt!"
 			Exit Sub
-		ElseIf intLoginInicial = 0 Then
+ElseIf intLoginInicial = 0 Then
 			MsgBox "Timeout!, prompt no detectado :-)"
 			Exit Sub
-		Else
-			
-		    'crt.Sleep 3000
-		    crt.Screen.WaitForString "login as: ", 1
+
+ElseIf intLoginInicial = 1 Then
+			crt.Sleep 2000
+			crt.Screen.WaitForString "Username: ", 1
 			crt.Screen.Send Trim(strLogin) & chr(13)
 			crt.Sleep 2000
 			crt.Screen.WaitForString "assword: ", 1
 			crt.Screen.Send Trim(strPassword) & chr(13)
+			Exit Sub
+
+ElseIf intLoginInicial = 2 Then
 			crt.Sleep 2000
 			crt.Screen.WaitForString "username: ", 1
+			crt.Screen.Send Trim(strLogin) & chr(13)
+			crt.Sleep 2000
+			crt.Screen.WaitForString "assword: ", 1
 			crt.Screen.Send Trim(strPassword) & chr(13)
-	End If
+			Exit Sub
+
+ElseIf intLoginInicial = 3 Then
+			crt.Sleep 2000
+			crt.Screen.WaitForString "User Name: ", 1
+			crt.Screen.Send Trim(strLogin) & chr(13)
+			crt.Sleep 2000
+			crt.Screen.WaitForString "assword: ", 1
+			crt.Screen.Send Trim(strPassword) & chr(13)
+			Exit Sub
+
+Else
+
+			MsgBox "Prompt acotados pero no declarado en los tipos."
+
+End If
 	
 	' usar condición para averiguar su¡i hay acceso como enable en dispositivos cisco.
 	If (crt.Screen.WaitForString("#", 1)) Or (crt.Screen.WaitForString("(enable)", 1)) Or (crt.Screen.WaitForString("*", 1))  Then
