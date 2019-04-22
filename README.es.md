@@ -23,17 +23,24 @@ En el SecureCRT habrá que gaurdar todas las credenciales referenciándolas o  g
 ¿Cómo empezar?
 --------------
 Creamos una carpeta por ejemplo en:
-C:\Users\[usuario_windows]\AppData\Roaming\VanDyke\k-script\SecureCRT_Integration_Keepass
+C:\Users\[usuario_windows]\AppData\Roaming\VanDyke\k-script\
 
-Dentro de la carpeta copiamos ambos fichero:
-- SecureCRT_Keepass.vbs
-- Generic_Conector.py
+Dentro de esta carpeta clonamos el proyecto:
+
+git clone https://github.com/kentron2019/SecureCRT_Integration_Keepass.git
+
 
 En la opción propiedad de sessión SecureCRT se carga el fichero: SecureCRT_Keepass.vbs
 * Habrá que modificar el path donde se guardo el fichero Generic_Conector.py
 
+Línea que hay que modificiar:
+strcommand = "cmd /c python C:\Users\karim.zin\AppData\Roaming\VanDyke\k-script\SecureCRT_Integration_Keepass\Generic_Conector.py" & Chr(32) & Trim(args) &  " LoginyPassword"
+
+Replazar: "karim.zin" por el usuario en tu sistema.
+
+
 Importante:
-* Esta modificación se tiene que hacer en el fichero: SecureCRT_Keepass.vbs
+* Esta modificación se tiene que hacer en el fichero: SecureCRT_Keepass.vbs de lo contrario no funcionaría.
 
 Pre requisitos
 --------------
