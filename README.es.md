@@ -6,10 +6,6 @@ El Objetivo es tener todos los usurios y contraseñas guardadas en KeePass.
 Este desarollo en una versión inicial para poder utilizarlo desde SecureCRT con el plugin 
 ya desarollado por Perry Nguyen que permite hacelro con el navegador Chrome y Firefox. 
 
-Read this in other languages: Spanish.[pruebas]https://github.com/kentron2019/SecureCRT_Integration_Keepass/blob/master/README.es.md
-
-
-
 ¿Cómo funciona?
 --------------
 
