@@ -4,7 +4,9 @@ Conectarse a keepass para obtener el usuario y contarseña desde SecureCRT.
 El Objetivo es tener todos los usurios y contraseñas guardadas en KeePass.
 
 Este desarollo en una versión inicial para poder utilizarlo desde SecureCRT con el plugin 
-ya desarollado por Perry Nguyen que permite hacelro con el navegador Chrome y Firefox. 
+ya desarollado por Perry Nguyen que permite hacelro con el navegador Chrome y Firefox.
+
+Leer este manual en otro idioma: <a href="https://github.com/kentron2019/SecureCRT_Integration_Keepass/blob/master/README.md">Inglés</a>
 
 ¿Cómo funciona?
 --------------
